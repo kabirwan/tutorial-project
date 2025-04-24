@@ -1,0 +1,17 @@
+
+body {
+    padding: 2px;
+    margin: 25px;
+    background-color: lime;
+}
+
+.title {
+    padding-top: 25px;
+    text-align: center;
+    background-color:lime;
+}
+
+#success {
+    text-align: center;
+    background-color: lime;
+}
