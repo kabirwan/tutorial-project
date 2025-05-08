@@ -43,3 +43,7 @@ nav.navbar {
 .footer {
     background-color: #6c757d;
 }
+
+.about {
+    font-weight:bold;
+}
