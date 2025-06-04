@@ -51,24 +51,27 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-4">
-                <button class="button-html form-control bg-success text-white mt-5" type="button">BOOTSTRAP Grid</button>
-                <button class="button-html form-control" type="button">Components</button>
-                <button class="button-html form-control" type="button">Utilities</button>
+                <button onclick="display_bootstrap_grid_tab()" id="bootstrap-grid-tab" class="button-html form-control text-white mt-5" type="button">BOOTSTRAP Grid</button>
+                <button onclick="display_bootstrap_component_tab()" id="bootstrap-component-tab" class="button-html form-control" type="button">Components</button>
+                <button onclick="display_bootstrap_utilities_tab()" id="bootstrap-utilities-tab" class="button-html form-control" type="button">Utilities</button>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-8">
-                <h1 class="text-success">BOOTSTRAP Grid</h1>
-                <p>BOOTSTRAP uses a 12-colunm grid system for responsive layout</p>
-                <h1 class="text-success">Example: two column </h1>
-                <pre class="code-section ps-2">
-                    <code>
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-md-6"&gt;column 1&lt;/div&gt;
-                                &lt;div class="col-md-6"column 2&lt;/div&gt;
+                <div id="bootstrap-grid">
+                    <h1 class="text-success">BOOTSTRAP Grid</h1>
+                    <p>BOOTSTRAP uses a 12-colunm grid system for responsive layout</p>
+                    <h1 class="text-success">Example: two column </h1>
+                    <pre class="code-section ps-2">
+                        <code>
+                            &lt;div class="container"&gt;
+                                &lt;div class="row"&gt;
+                                    &lt;div class="col-md-6"&gt;column 1&lt;/div&gt;
+                                    &lt;div class="col-md-6"column 2&lt;/div&gt;
+                                &lt;/div&gt;
                             &lt;/div&gt;
-                        &lt;/div&gt;
-                    </code>
-                </pre>
+                        </code>
+                    </pre>
+                </div>
+                <div id="bootstrap-component">
                     <h1 class="text-success">components: navbar</h1>
                     <p>bootstrap provide pre-built components like navbar</p>
                     <pre class="code-section ps-2">
@@ -89,17 +92,20 @@
                         &lt;/nav>
                         </code>
                     </pre>
-                      <h1 class="text-success">Utilities:Float and clear fix</h1>
-                    <p>Float an element to the right with the .float-right class or to the left with .float-left, and clear floats with the .clearfix class:</p>
-                    <pre class="code-section ps-2">
-                        <code>
-                            &lt;div class="clearfix">
-                                  &lt;span class="float-left">Float left&lt;/span>
-                                    &lt;span class="float-right">Float right&lt;/span>
-                            &lt;/div>
-                        </code>
-                    </pre>
-                 </div>
+                </div>
+                <div id="bootstrap-utilities">
+                    <h1 class="text-success">Utilities:Float and clear fix</h1>
+                  <p>Float an element to the right with the .float-right class or to the left with .float-left, and clear floats with the .clearfix class:</p>
+                  <pre class="code-section ps-2">
+                      <code>
+                          &lt;div class="clearfix">
+                                &lt;span class="float-left">Float left&lt;/span>
+                                  &lt;span class="float-right">Float right&lt;/span>
+                          &lt;/div>
+                      </code>
+                  </pre>
+                </div>
+           </div>
         </div>
     </div>
     <!-- footer -->
@@ -111,5 +117,49 @@
     
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      // var display_html_basics = document.getElementById('html-basics');
+    // var display_html_table = document.getElementById('html-table');
+    // var display_html_form = document.getElementById('html-form');
+
+    // default displays
+    document.getElementById('bootstrap-utilities').style.display = 'none';
+    document.getElementById('bootstrap-component').style.display = 'none';
+    document.getElementById('bootstrap-grid-tab').classList.add('active-tab');
+
+    function display_bootstrap_grid_tab(){     
+        // display and hide sections
+        document.getElementById('bootstrap-grid').style.display = 'block';
+        document.getElementById('bootstrap-component').style.display = 'none';
+        document.getElementById('bootstrap-utilities').style.display = 'none';
+        // change the background of active tabs
+        document.getElementById('bootstrap-grid-tab').classList.add('active-tab');
+        document.getElementById('bootstrap-component-tab').classList.remove('active-tab');
+        document.getElementById('bootstrap-utilities-tab').classList.remove('active-tab');
+        
+    }
+    
+    function display_bootstrap_component_tab(){        
+        // display and hide sections
+        document.getElementById('bootstrap-grid').style.display = 'none';
+        document.getElementById('bootstrap-component').style.display = 'block';
+        document.getElementById('bootstrap-utilities').style.display = 'none';
+        // change the background of active tabs
+        document.getElementById('bootstrap-grid-tab').classList.remove('active-tab');
+        document.getElementById('bootstrap-component-tab').classList.add('active-tab');
+        document.getElementById('bootstrap-utilities-tab').classList.remove('active-tab');
+    }
+    
+    function display_bootstrap_utilities_tab(){        
+        // display and hide sections
+        document.getElementById('bootstrap-grid').style.display = 'none';
+        document.getElementById('bootstrap-component').style.display = 'none';
+        document.getElementById('bootstrap-utilities').style.display = 'block';
+        // change the background of active tabs
+        document.getElementById('bootstrap-grid-tab').classList.remove('active-tab');
+        document.getElementById('bootstrap-component-tab').classList.remove('active-tab');
+        document.getElementById('bootstrap-utiilities-tab').classList.add('active-tab');
+    }
+  </script>
 </body>
 </html>

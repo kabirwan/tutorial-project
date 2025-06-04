@@ -49,59 +49,71 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-4">
-                <button class="button-html form-control bg-success text-white mt-5" type="button">CSS Basics</button>
-                <button class="button-html form-control" type="button">Flexbox</button>
-                <button class="button-html form-control" type="button">Grids</button>
-                <button class="button-html form-control" type="button">Changing Colors</button>
+                <button onclick="display_css_basics_tab()" class="button-html form-control bg-success text-white mt-5" type="button">CSS Basics</button>
+                <button onclick="display_css_colors_tab()" class="button-html form-control" type="button">Changing Colors</button>
+                <button onclick="display_css_grid_tab()" class="button-html form-control" type="button">Grids</button>
+                <button onclick="display_css_flexbox_tab()" class="button-html form-control" type="button">Flexbox</button>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-8">
-                <h1 class="text-success">CSS Basics</h1>
-                <p>CSS (cascading style sheet) is used to style HTML element</p>
-                <pre class="code-section ps-2">
-                    <code>
-                                    .button-html {
+                <div  id="css-basics">
+
+                    <h1 class="text-success">CSS Basics</h1>
+                    <p>CSS (cascading style sheet) is used to style HTML element</p>
+                    <pre class="code-section ps-2">
+                        <code>
+                                        .button-html {
                                             border: bottom 50px;;
                                         }
-
-                                    .code-section {
+    
+                                        .code-section {
                                             border-left: #396f4e solid 4px;
                                         }
-                    </code>
-                </pre>
-                <h1 class="text-success">Example:Changing Colors</h1>
-                <p>Every element is a box with margin,border,padding and content </p>
-                <pre class="code-section ps-2">
-                    <code>
-                                .button-html {
-                                        color :blue;
-                                    }
+                        </code>
+                    </pre>
+                </div>
+                <div " id="css-colors">
 
-                                .code-section {
-                                     background-color : red ;
+                    <h1 class="text-success">Example:Changing Colors</h1>
+                    <p>Every element is a box with margin,border,padding and content </p>
+                    <pre class="code-section ps-2">
+                        <code>
+                                    .button-html {
+                                            color :blue;
+                                        }
+    
+                                    .code-section {
+                                         background-color : red ;
+                                        }
+                        </code>
+                    </pre>
+                </div>
+                <div onclick="display_css_grid_tab" id="css-grid">
+                    
+                    <h1 class="text-success">Grids</h1>
+                    <p>To make an HTML element behave as a grid container, you have to set the display property to grid or inline-grid.</p>
+                    <pre class="code-section ps-2">
+                        <code>
+                                    .grid-container {
+                                             display: grid;
+                                            grid-template-columns: auto auto auto auto;
                                     }
-                    </code>
-                </pre>
-                <h1 class="text-success">Grids</h1>
-                <p>To make an HTML element behave as a grid container, you have to set the display property to grid or inline-grid.</p>
-                <pre class="code-section ps-2">
+                        </code>
+                    </pre>
+                </div>
+                <div onclick="display_css_flexbox_tab" id="css-flexbox">
+                    <h1 class="text-success">Flexbox</h1>
+                    <p>The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.</p>              
+                  <pre class="code-section ps-2">
                     <code>
-                                .grid-container {
-                                         display: grid;
-                                        grid-template-columns: auto auto auto auto;
-                                }
+                                .flex-container {
+                                        display: flex;
+                                        height: 200px;
+                                        align-items: flex-end;
+                                                }
                     </code>
                 </pre>
-                <h1 class="text-success">Flexbox</h1>
-                <p>The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.</p>              
-              <pre class="code-section ps-2">
-                <code>
-                            .flex-container {
-                                    display: flex;
-                                    height: 200px;
-                                    align-items: flex-end;
-                                            }
-                </code>
-            </pre>
+
+                </div>
            </div>
             </div>
      </div>
@@ -114,6 +126,43 @@
      </footer>
     
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+
+  </script>
+  <script>
+            // var display_html_basics = document.getElementById('html-basics');
+    // var display_html_table = document.getElementById('html-table');
+    // var display_html_form = document.getElementById('html-form');
+
+    document.getElementById('css-colors').style.display = 'none';
+    document.getElementById('css-grid').style.display = 'none';
+    document.getElementById('css-flexbox').style.display = 'none';
+    function display_css_basics_tab(){        
+        document.getElementById('css-basics').style.display = 'block';
+        document.getElementById('css-colors').style.display = 'none';
+        document.getElementById('css-grid').style.display = 'none';
+        document.getElementById('css-flexbox').style.display = 'none';
+    }
+    
+    function display_css_colors_tab(){        
+        document.getElementById('css-basics').style.display = 'none';
+        document.getElementById('css-colors').style.display = 'block';
+        document.getElementById('css-grid').style.display = 'none';
+        document.getElementById('css-flexbox').style.display = 'none';
+    }
+
+    function display_css_grid_tab(){        
+        document.getElementById('css-basics').style.display = 'none';
+        document.getElementById('css-colors').style.display = 'none';
+        document.getElementById('css-grid').style.display = 'block';
+        document.getElementById('css-flexbox').style.display = 'none';
+    } 
+    function display_css_flexbox_tab(){
+           document.getElementById('css-basics').style.display = 'none';
+           document.getElementById('css-colors').style.display = 'none';
+           document.getElementById('css-grid').style.display = 'none';
+           document.getElementById('css-flexbox').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
